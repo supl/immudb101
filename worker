@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+TRANSACTION=${TRANSACTION:-1000}
+
+for (( i = 0; i <= $TRANSACTION; i++ )) do
+    immuclient set $(od -vAn -N2 -tu2 < /dev/urandom) $(od -vAn -N2 -tu2 < /dev/urandom)
+done
